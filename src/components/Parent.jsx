@@ -3,7 +3,7 @@ import Child from "./Child";
 export default function Parent() {
   return (
     <div>
-      <h2>Parent Component</h2>
+      <h2 className="bg-red-50">Parent Component</h2>
       <Child />
     </div>
   );
