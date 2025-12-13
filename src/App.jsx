@@ -1,15 +1,19 @@
-import Parent from "./components/Parent";
-import { userContext } from "./context/UserContext";
+import React from 'react'
+import { UserContextProvider } from './context/UserContextProvider'
+import { Login } from './components/Login'
+import { Profile } from './components/Profile'
 
-export default function App() {
-  const userName = "Ultra Violet";
 
+export  const App = () => {
   return (
-    <userContext.Provider value={userName}>
-      <div>
-        <h1>App Component</h1>
-        <Parent />
-      </div>
-    </userContext.Provider>
-  );
+    <>
+    <UserContextProvider>
+      <Login/>
+      <Profile/>
+    </UserContextProvider>
+    </>
+  )
 }
+
+export default(App)
+
