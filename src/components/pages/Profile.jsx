@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-import UserContext from '../context/UserContext'
+import { userContext } from '../context/UserContext'
 
 export const Profile = () => {
-  const { user } = useContext(UserContext)
+  const { user } = useContext(userContext)
 
   if (!user)
     return (
@@ -15,13 +15,21 @@ export const Profile = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-900">
-      <div className="bg-slate-800 p-8 rounded-xl shadow-lg text-center">
-        <h1 className="text-2xl font-semibold text-white mb-2">
+      
+      <div className="bg-slate-800 p-8 rounded-2xl shadow-lg text-center">
+        
+        <h2 className="text-2xl font-semibold text-white mb-4">
           Profile
-        </h1>
-        <p className="text-lg text-slate-300">
-          Welcome, <span className="text-blue-400 font-medium">{user.username}</span>
+        </h2>
+
+        <p className="text-slate-300 text-lg">
+          Hello and Welcome
         </p>
+
+        <p className="text-indigo-400 text-xl font-medium mt-2">
+          {user.userName}
+        </p>
+
       </div>
     </div>
   )

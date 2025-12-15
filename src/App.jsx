@@ -1,10 +1,9 @@
 import React from 'react'
-import { UserContextProvider } from './context/UserContextProvider'
-import { Login } from './components/Login'
-import { Profile } from './components/Profile'
+import { UserContextProvider } from './components/context/UserContextProvider'
+import { Login } from './components/pages/Login'
+import { Profile } from './components/pages/Profile'
 
-
-export  const App = () => {
+export const App = () => {
   return (
     <>
     <UserContextProvider>
@@ -15,5 +14,4 @@ export  const App = () => {
   )
 }
 
-export default(App)
-
+export default App
