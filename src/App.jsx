@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { themeProvider } from './components/context/theme'
 
 export const App = () => {
+
+  const [themeMode, setThemeMode] = useState("light")
+
+  const lightTheme = () => {
+    setThemeMode("light")
+  }
+
+    const darkTheme = () => {
+    setThemeMode("dark")
+  }
+
+  useEffect(()=>{
+    document.querySelector('html').classList.remove('light','dark')
+    document.querySelector('html').classList.add('themeMode')
+  },[themeMode])
   return (
-    <themeProvider>
+    <themeProvider value={{themeMode, lightTheme, darkTheme}}>
    
   <div className="flex flex-wrap min-h-screen items-center">
                   <div className="w-full">
